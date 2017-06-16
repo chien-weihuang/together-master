@@ -15,6 +15,7 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserInfo()
+        self.imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -38,6 +39,22 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
         sheet.addAction(cancelAction)
         self.present(sheet, animated: true, completion: nil)
         
+        let user = Auth.auth().currentUser
+        let storageRef = Storage.storage().reference().child("usersProfilePics").child(user!.uid)
+        let imageData = UIImageJPEGRepresentation(self.profilePic.image!, 0.1)
+        storageRef.putData(imageData!, metadata: nil, completion: { (metadata, err) in
+            if err == nil {
+                let path = metadata?.downloadURL()?.absoluteString
+                let values = ["profilePicLink": path!]
+                Database.database().reference().child("users").child((user?.uid)!).child("credentials").updateChildValues(values, withCompletionBlock: { (errr, _) in
+                    if errr == nil {
+                        
+                        //self.profilePic.image = UIImage.init(named: "profile pic")
+                        
+                    }
+                })
+            }
+        })
         
         
     }
@@ -59,20 +76,7 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
                 self.present(self.imagePicker, animated: true, completion: nil)
             }
         }
-        var user = Auth.auth().currentUser
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        let storageRef = Storage.storage().reference().child("usersProfilePics").child((user?.uid)!)
-        let imageData = UIImageJPEGRepresentation(profilePic, 0.1)
-        storageRef.putData(imageData!, metadata: nil, completion: { (metadata, err) in
-            if err == nil{
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                if let photoURL = metadata!.downloadURL(){
-                    changeRequest?.photoURL = photoURL
-                }
-            }
-        
-        
-        })
+   
         
        
     }
@@ -80,6 +84,7 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.profilePic.image = pickedImage
+            print("I am in imagepicker controller")
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -99,7 +104,7 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
                 DispatchQueue.main.async {
                     weakSelf?.username.text = user.name
                     //weakSelf?.emailLabel.text = user.email
-                    weakSelf?.profilePic.image = user.profilePic
+                    weakSelf?.profilePic.image  = user.profilePic
                     weakSelf = nil
                 }
             })

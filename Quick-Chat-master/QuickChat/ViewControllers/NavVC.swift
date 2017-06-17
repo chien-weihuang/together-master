@@ -36,12 +36,17 @@ class NavVC: UINavigationController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var profilePicView: RoundedImageView!
+    @IBOutlet weak var profilePicView:  RoundedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     var topAnchorContraint: NSLayoutConstraint!
     let darkView = UIView.init()
     var items = [User]()
+    
+    @IBAction func toPreferenceButton(_ sender: Any) {
+        self.dismissExtraViews()
+    
+    }
     
     //MARK: Methods
     func customization() {
@@ -83,11 +88,11 @@ class NavVC: UINavigationController, UICollectionViewDelegate, UICollectionViewD
         profileViewAspectRatio.isActive = true
         self.profileView.centerXAnchor.constraint(equalTo: extraViewsContainer.centerXAnchor).isActive = true
         self.profileView.centerYAnchor.constraint(equalTo: extraViewsContainer.centerYAnchor).isActive = true
-        self.profileView.layer.cornerRadius = 5
+        self.profileView.layer.cornerRadius = 1
         self.profileView.clipsToBounds = true
         self.profileView.isHidden = true
         self.profilePicView.layer.borderColor = GlobalVariables.purple.cgColor
-        self.profilePicView.layer.borderWidth = 3
+        self.profilePicView.layer.borderWidth = 2
         self.view.layoutIfNeeded()
     //PreviewView Customization
         extraViewsContainer.addSubview(self.previewView)
@@ -198,7 +203,7 @@ class NavVC: UINavigationController, UICollectionViewDelegate, UICollectionViewD
                 DispatchQueue.main.async {
                     weakSelf?.nameLabel.text = user.name
                     weakSelf?.emailLabel.text = user.email
-                    weakSelf?.profilePicView.image = user.profilePic
+                    weakSelf?.profilePicView.image  = user.profilePic
                     weakSelf = nil
                 }
             })

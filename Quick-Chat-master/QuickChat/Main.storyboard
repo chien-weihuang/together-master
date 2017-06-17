@@ -1083,6 +1083,24 @@
             </objects>
             <point key="canvasLocation" x="2468" y="429"/>
         </scene>
+        <!--otherUserProfileViewController-->
+        <scene sceneID="6cA-rJ-iYJ">
+            <objects>
+                <viewController storyboardIdentifier="otherUserProfileViewController" title="otherUserProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JSp-FY-AFW" customClass="otherUserProfileViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mF1-qG-FNZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="K7A-Yu-v0Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bsV-SL-1Jk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHx-ij-XPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3096" y="512"/>
+        </scene>
         <!--NavVC-->
         <scene sceneID="bKx-7C-iuV">
             <objects>

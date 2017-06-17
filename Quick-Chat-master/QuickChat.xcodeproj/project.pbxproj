@@ -10,6 +10,7 @@
 		0410559A1EF5786B00D8DC81 /* imageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041055991EF5786B00D8DC81 /* imageCard.swift */; };
 		0410559C1EF5789A00D8DC81 /* EmojiOptionsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410559B1EF5789A00D8DC81 /* EmojiOptionsOverlay.swift */; };
 		0410559E1EF578DB00D8DC81 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410559D1EF578DB00D8DC81 /* CardView.swift */; };
+		041055A01EF588F300D8DC81 /* otherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410559F1EF588F300D8DC81 /* otherUserProfileViewController.swift */; };
 		042DA4991EF19E41000A65BC /* tinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DA4981EF19E41000A65BC /* tinderViewController.swift */; };
 		0435C3C41EE7179300396B8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0435C3C31EE7179300396B8C /* GoogleService-Info.plist */; };
 		045EA6E31EF51F94007E7CFD /* hobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */; };
@@ -39,6 +40,7 @@
 		041055991EF5786B00D8DC81 /* imageCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = imageCard.swift; path = QuickChat/Model/imageCard.swift; sourceTree = "<group>"; };
 		0410559B1EF5789A00D8DC81 /* EmojiOptionsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiOptionsOverlay.swift; sourceTree = "<group>"; };
 		0410559D1EF578DB00D8DC81 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0410559F1EF588F300D8DC81 /* otherUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otherUserProfileViewController.swift; sourceTree = "<group>"; };
 		042DA4981EF19E41000A65BC /* tinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = tinderViewController.swift; path = QuickChat/ViewControllers/tinderViewController.swift; sourceTree = "<group>"; };
 		0435C3C31EE7179300396B8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hobbyViewController.swift; path = QuickChat/ViewControllers/hobbyViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				22A5FC5E1DEB185B00624E2B /* NavVC.swift */,
 				2217853C1DCD1DAC00A69F88 /* ConversationsVC.swift */,
 				2284BC441DC3582F00E36E8A /* ChatVC.swift */,
+				0410559F1EF588F300D8DC81 /* otherUserProfileViewController.swift */,
 				22EA57901E1D32520008FFB2 /* VCCells.swift */,
 			);
 			name = ViewControllers;
@@ -318,6 +321,7 @@
 				22A92BB11D59EBD6005D76F7 /* AppDelegate.swift in Sources */,
 				224AFAA91D86890A004E7CCD /* WelcomeVC.swift in Sources */,
 				04DAF7621EF2D533009745ED /* detailViewController.swift in Sources */,
+				041055A01EF588F300D8DC81 /* otherUserProfileViewController.swift in Sources */,
 				0410559C1EF5789A00D8DC81 /* EmojiOptionsOverlay.swift in Sources */,
 				220698841E066E4900F2284B /* Helper Files.swift in Sources */,
 				045EA6E71EF54465007E7CFD /* secretViewController.swift in Sources */,

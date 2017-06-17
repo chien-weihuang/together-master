@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		042DA4991EF19E41000A65BC /* tinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DA4981EF19E41000A65BC /* tinderViewController.swift */; };
 		0435C3C41EE7179300396B8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0435C3C31EE7179300396B8C /* GoogleService-Info.plist */; };
+		045EA6E31EF51F94007E7CFD /* hobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */; };
 		04DAF7621EF2D533009745ED /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF7611EF2D533009745ED /* detailViewController.swift */; };
 		220698841E066E4900F2284B /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220698831E066E4900F2284B /* Helper Files.swift */; };
 		2217853D1DCD1DAC00A69F88 /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217853C1DCD1DAC00A69F88 /* ConversationsVC.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		042DA4981EF19E41000A65BC /* tinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = tinderViewController.swift; path = QuickChat/ViewControllers/tinderViewController.swift; sourceTree = "<group>"; };
 		0435C3C31EE7179300396B8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hobbyViewController.swift; path = QuickChat/ViewControllers/hobbyViewController.swift; sourceTree = "<group>"; };
 		04DAF7611EF2D533009745ED /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailViewController.swift; path = QuickChat/detailViewController.swift; sourceTree = "<group>"; };
 		220698831E066E4900F2284B /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Helper Files.swift"; path = "Helper files/Helper Files.swift"; sourceTree = "<group>"; };
 		2217853C1DCD1DAC00A69F88 /* ConversationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsVC.swift; path = QuickChat/ViewControllers/ConversationsVC.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		224AFA9E1D868371004E7CCD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */,
 				04DAF7611EF2D533009745ED /* detailViewController.swift */,
 				042DA4981EF19E41000A65BC /* tinderViewController.swift */,
 				2274709D1DCCF9BF00645401 /* LandingVC.swift */,
@@ -296,6 +299,7 @@
 				224AFAA91D86890A004E7CCD /* WelcomeVC.swift in Sources */,
 				04DAF7621EF2D533009745ED /* detailViewController.swift in Sources */,
 				220698841E066E4900F2284B /* Helper Files.swift in Sources */,
+				045EA6E31EF51F94007E7CFD /* hobbyViewController.swift in Sources */,
 				22873DAA1DC790550021690E /* Message.swift in Sources */,
 				22EA57911E1D32520008FFB2 /* VCCells.swift in Sources */,
 				042DA4991EF19E41000A65BC /* tinderViewController.swift in Sources */,

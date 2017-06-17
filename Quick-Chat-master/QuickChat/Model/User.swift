@@ -91,7 +91,7 @@ class User: NSObject {
                 URLSession.shared.dataTask(with: link!, completionHandler: { (data, response, error) in
                     if error == nil {
                         let profilePic = UIImage.init(data: data!)
-                        let user = User.init(name: name, email: email, id: forUserID, profilePic: profilePic!)
+                        let user = User.init(name: name, email: email, id: forUserID,profilePic: profilePic!)
                         completion(user)
                     }
                 }).resume()
@@ -108,6 +108,7 @@ class User: NSObject {
                 let name = credentials["name"]!
                 let email = credentials["email"]!
                 let link = URL.init(string: credentials["profilePicLink"]!)
+                
                 URLSession.shared.dataTask(with: link!, completionHandler: { (data, response, error) in
                     if error == nil {
                         let profilePic = UIImage.init(data: data!)
@@ -133,6 +134,7 @@ class User: NSObject {
         self.email = email
         self.id = id
         self.profilePic = profilePic
+        
     }
 }
 

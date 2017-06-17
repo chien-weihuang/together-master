@@ -595,10 +595,10 @@
             </objects>
             <point key="canvasLocation" x="2087" y="-228"/>
         </scene>
-        <!--View Controller-->
+        <!--Hobby View Controller-->
         <scene sceneID="QaE-wl-UqJ">
             <objects>
-                <viewController id="ZGa-44-y4U" sceneMemberID="viewController">
+                <viewController id="ZGa-44-y4U" customClass="hobbyViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kRs-a5-hnl"/>
                         <viewControllerLayoutGuide type="bottom" id="zUe-i4-lb1"/>
@@ -607,28 +607,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="興趣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-FW-Inq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="興趣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-FW-Inq">
                                 <rect key="frame" x="143" y="55" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="我的興趣是....." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-m4-FGi">
-                                <rect key="frame" x="28" y="114" width="259" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="我的興趣是" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-m4-FGi">
+                                <rect key="frame" x="28" y="114" width="264" height="229"/>
+                                <color key="backgroundColor" red="0.94802695512771606" green="0.80066472291946411" blue="0.93653541803359985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.38096175591150921" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oq-CQ-Pv9">
-                                <rect key="frame" x="151" y="397" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oq-CQ-Pv9">
+                                <rect key="frame" x="145" y="397" width="31" height="30"/>
                                 <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="hobbySubmit:" destination="ZGa-44-y4U" eventType="touchUpInside" id="yaX-C9-H86"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P0k-m4-FGi" firstAttribute="top" secondItem="NPU-FW-Inq" secondAttribute="bottom" constant="38" id="7BA-2o-P3L"/>
+                            <constraint firstItem="NPU-FW-Inq" firstAttribute="top" secondItem="kRs-a5-hnl" secondAttribute="bottom" constant="35" id="9rf-bR-Ytz"/>
+                            <constraint firstItem="8oq-CQ-Pv9" firstAttribute="top" secondItem="P0k-m4-FGi" secondAttribute="bottom" constant="54" id="UIa-nH-ILt"/>
+                            <constraint firstItem="8oq-CQ-Pv9" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="abj-pC-R8E"/>
+                            <constraint firstItem="zUe-i4-lb1" firstAttribute="top" secondItem="8oq-CQ-Pv9" secondAttribute="bottom" constant="141" id="b5v-Jg-m83"/>
+                            <constraint firstItem="P0k-m4-FGi" firstAttribute="leading" secondItem="Orb-BY-AWu" secondAttribute="leadingMargin" constant="12" id="d1m-bl-Cyp"/>
+                            <constraint firstItem="NPU-FW-Inq" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="lAF-XR-vqR"/>
+                            <constraint firstItem="P0k-m4-FGi" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="xUG-GG-4s9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hobbyText" destination="P0k-m4-FGi" id="ovB-Kb-rDH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3h-Tq-bSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

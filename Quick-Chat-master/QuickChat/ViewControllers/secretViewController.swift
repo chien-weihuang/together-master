@@ -16,6 +16,7 @@ class secretViewController: UIViewController {
         fetchUserInfo()
         self.title = "秘密"
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,6 +59,16 @@ class secretViewController: UIViewController {
             
         )}
     
+    // toggle key board
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(secretViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     //Downloads current user credentials
     func fetchUserInfo() {

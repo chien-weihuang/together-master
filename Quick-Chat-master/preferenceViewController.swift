@@ -19,6 +19,7 @@ class preferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         self.preferencePicker.delegate = self
         self.preferencePicker.dataSource = self
         fetchUserInfo()
+        self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
@@ -83,6 +84,16 @@ class preferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         
     }
 
+    //toggle keyboard
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(preferenceViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     //Downloads current user credentials
     func fetchUserInfo() {

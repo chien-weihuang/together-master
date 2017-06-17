@@ -16,6 +16,7 @@ class hobbyViewController: UIViewController {
         fetchUserInfo()
         self.title = "興趣"
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +89,16 @@ class hobbyViewController: UIViewController {
             }
         })
         
+    }
+    //keyboard toggle
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hobbyViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     

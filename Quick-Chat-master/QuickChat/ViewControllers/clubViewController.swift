@@ -16,6 +16,7 @@ class clubViewController: UIViewController {
         fetchUserInfo()
         self.title = "社團"
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +76,16 @@ class clubViewController: UIViewController {
             }
         })
         
+    }
+    // toggle keyboard
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clubViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     /*

@@ -43,11 +43,7 @@ class NavVC: UINavigationController, UICollectionViewDelegate, UICollectionViewD
     let darkView = UIView.init()
     var items = [User]()
     
-    @IBAction func toPreferenceButton(_ sender: Any) {
-        self.dismissExtraViews()
-    
-    }
-    
+       
     //MARK: Methods
     func customization() {
         //DarkView customization

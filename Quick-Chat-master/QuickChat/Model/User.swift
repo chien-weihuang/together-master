@@ -43,7 +43,7 @@ class User: NSObject {
                 storageRef.putData(imageData!, metadata: nil, completion: { (metadata, err) in
                     if err == nil {
                         let path = metadata?.downloadURL()?.absoluteString
-                        let values = ["name": withName, "email": email, "profilePicLink": path!]
+                        let values = ["name": withName, "email": email, "profilePicLink": path!,"hobby":"","preference":"","clubs":"","secret":""]
                         Database.database().reference().child("users").child((user?.uid)!).child("credentials").updateChildValues(values, withCompletionBlock: { (errr, _) in
                             if errr == nil {
                                 let userInfo = ["email" : email, "password" : password]

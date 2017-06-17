@@ -1263,7 +1263,6 @@
                             </constraints>
                             <state key="normal" title="toPreference" image="Image"/>
                             <connections>
-                                <action selector="toPreferenceButton:" destination="ZJi-hT-Uhs" eventType="touchUpInside" id="sZh-1h-llI"/>
                                 <segue destination="I3L-ws-Oyf" kind="show" id="gEd-PA-2Sm"/>
                             </connections>
                         </button>

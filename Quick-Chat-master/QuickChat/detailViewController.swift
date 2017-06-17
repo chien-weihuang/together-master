@@ -16,6 +16,7 @@ class detailViewController: UIViewController, UIImagePickerControllerDelegate ,U
         super.viewDidLoad()
         fetchUserInfo()
         self.imagePicker.delegate = self
+        self.title = "編輯自介"
         // Do any additional setup after loading the view.
     }
 

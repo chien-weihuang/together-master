@@ -10,6 +10,9 @@
 		042DA4991EF19E41000A65BC /* tinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DA4981EF19E41000A65BC /* tinderViewController.swift */; };
 		0435C3C41EE7179300396B8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0435C3C31EE7179300396B8C /* GoogleService-Info.plist */; };
 		045EA6E31EF51F94007E7CFD /* hobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */; };
+		045EA6E51EF53F49007E7CFD /* clubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6E41EF53F49007E7CFD /* clubViewController.swift */; };
+		045EA6E71EF54465007E7CFD /* secretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6E61EF54465007E7CFD /* secretViewController.swift */; };
+		045EA6EF1EF54B07007E7CFD /* preferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA6EE1EF54B07007E7CFD /* preferenceViewController.swift */; };
 		04DAF7621EF2D533009745ED /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF7611EF2D533009745ED /* detailViewController.swift */; };
 		220698841E066E4900F2284B /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220698831E066E4900F2284B /* Helper Files.swift */; };
 		2217853D1DCD1DAC00A69F88 /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217853C1DCD1DAC00A69F88 /* ConversationsVC.swift */; };
@@ -33,6 +36,9 @@
 		042DA4981EF19E41000A65BC /* tinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = tinderViewController.swift; path = QuickChat/ViewControllers/tinderViewController.swift; sourceTree = "<group>"; };
 		0435C3C31EE7179300396B8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hobbyViewController.swift; path = QuickChat/ViewControllers/hobbyViewController.swift; sourceTree = "<group>"; };
+		045EA6E41EF53F49007E7CFD /* clubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = clubViewController.swift; path = QuickChat/ViewControllers/clubViewController.swift; sourceTree = "<group>"; };
+		045EA6E61EF54465007E7CFD /* secretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = secretViewController.swift; path = QuickChat/ViewControllers/secretViewController.swift; sourceTree = "<group>"; };
+		045EA6EE1EF54B07007E7CFD /* preferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preferenceViewController.swift; sourceTree = "<group>"; };
 		04DAF7611EF2D533009745ED /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailViewController.swift; path = QuickChat/detailViewController.swift; sourceTree = "<group>"; };
 		220698831E066E4900F2284B /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Helper Files.swift"; path = "Helper files/Helper Files.swift"; sourceTree = "<group>"; };
 		2217853C1DCD1DAC00A69F88 /* ConversationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsVC.swift; path = QuickChat/ViewControllers/ConversationsVC.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 		224AFA9E1D868371004E7CCD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				045EA6EE1EF54B07007E7CFD /* preferenceViewController.swift */,
+				045EA6E61EF54465007E7CFD /* secretViewController.swift */,
+				045EA6E41EF53F49007E7CFD /* clubViewController.swift */,
 				045EA6E21EF51F94007E7CFD /* hobbyViewController.swift */,
 				04DAF7611EF2D533009745ED /* detailViewController.swift */,
 				042DA4981EF19E41000A65BC /* tinderViewController.swift */,
@@ -291,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2284BC451DC3582F00E36E8A /* ChatVC.swift in Sources */,
+				045EA6E51EF53F49007E7CFD /* clubViewController.swift in Sources */,
 				2274709E1DCCF9BF00645401 /* LandingVC.swift in Sources */,
 				22A5FC5F1DEB185B00624E2B /* NavVC.swift in Sources */,
 				22B974C01DE9B5DF00E09490 /* Conversation.swift in Sources */,
@@ -299,11 +309,13 @@
 				224AFAA91D86890A004E7CCD /* WelcomeVC.swift in Sources */,
 				04DAF7621EF2D533009745ED /* detailViewController.swift in Sources */,
 				220698841E066E4900F2284B /* Helper Files.swift in Sources */,
+				045EA6E71EF54465007E7CFD /* secretViewController.swift in Sources */,
 				045EA6E31EF51F94007E7CFD /* hobbyViewController.swift in Sources */,
 				22873DAA1DC790550021690E /* Message.swift in Sources */,
 				22EA57911E1D32520008FFB2 /* VCCells.swift in Sources */,
 				042DA4991EF19E41000A65BC /* tinderViewController.swift in Sources */,
 				224834B11DB539A50019153C /* User.swift in Sources */,
+				045EA6EF1EF54B07007E7CFD /* preferenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

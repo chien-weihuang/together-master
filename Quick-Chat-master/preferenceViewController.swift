@@ -1,5 +1,5 @@
 //
-//  hobbyViewController.swift
+//  preferenceViewController.swift
 //  QuickChat
 //
 //  Created by MAC on 2017/6/17.
@@ -9,23 +9,23 @@
 import UIKit
 import Firebase
 
-class hobbyViewController: UIViewController {
-    let id = Auth.auth().currentUser?.uid
+class preferenceViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource {
+
+    @IBOutlet weak var preferencePicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "偏好"
+        self.preferencePicker.delegate = self
+        self.preferencePicker.dataSource = self
         fetchUserInfo()
-        self.title = "興趣"
+
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-        @IBOutlet weak var hobbyText: UITextView!
-
-    @IBAction func hobbySubmit(_ sender: Any) {
-        let values = ["hobby": hobbyText.text]
+    let preference = ["可愛","氣質","穩重","有錢","強壯","豐虞","纖細","聰明","白淨"]
+    @IBOutlet weak var preferenceLabel: UILabel!
+    let id = Auth.auth().currentUser?.uid
+    @IBAction func preferenceFinish(_ sender: Any) {
+        let values = ["preference": lastanswer]
         Database.database().reference().child("users").child(id!).child("credentials").updateChildValues(values, withCompletionBlock: { (errr, _) in
             if errr == nil{
                 print("Change name success")
@@ -50,47 +50,53 @@ class hobbyViewController: UIViewController {
                     alertController,
                     animated: true,
                     completion: nil)
-
+                
                 
             }
         }
             
     )}
-
-    //text view placeholder adjustment
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if hobbyText.textColor == UIColor.lightGray {
-            hobbyText.text = nil
-            hobbyText.textColor = UIColor.black
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        
+    }
+    func pickerView(_ pickerView: UIPickerView,numberOfRowsInComponent component: Int) -> Int {
+        
+        return preference.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView,titleForRow row: Int,forComponent component: Int) -> String? {
+        // 設置為陣列 meals 的第 row 項資料
+        return preference[row]
+    }
+    var lastanswer = ""
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int, inComponent component: Int) {
+      
+        lastanswer = preference[row]
+        preferenceLabel.text = preference[row]
+        
+    }
+
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if hobbyText.text.isEmpty {
-            hobbyText.text = "Placeholder"
-            hobbyText.textColor = UIColor.lightGray
-        }
-    }
-
     //Downloads current user credentials
     func fetchUserInfo() {
         
         Database.database().reference().child("users").child(id!).child("credentials").observeSingleEvent(of: .value, with: { (snapshot) in
             if let data = snapshot.value as? [String: String] {
-                if data["hobby"] == nil || data["hobby"] == ""{
-                    self.hobbyText.text = "Placeholder"
-                    print("nothing")
-                }
-                let hobby = data["hobby"]
+                                let preference = data["preference"]
                 //print(hobby)
-                self.hobbyText.text = hobby!
-               
+                if preference != ""{
+                    self.preferenceLabel.text = preference
+                }
             }
         })
         
     }
-
-    
     /*
     // MARK: - Navigation
 

@@ -508,22 +508,21 @@
                                 <rect key="frame" x="79" y="365" width="46" height="30"/>
                                 <state key="normal" title="社團"/>
                                 <connections>
-                                    <segue destination="AhZ-Db-vJN" kind="show" id="r3g-fE-fog"/>
+                                    <segue destination="DiO-36-pZo" kind="show" id="PrH-TH-qRK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToF-Dc-Rc1">
                                 <rect key="frame" x="191" y="289" width="46" height="30"/>
                                 <state key="normal" title="偏好"/>
                                 <connections>
-                                    <action selector="ageButton:" destination="I3L-ws-Oyf" eventType="touchUpInside" id="Wfn-Ly-qMq"/>
-                                    <segue destination="DiO-36-pZo" kind="show" id="7So-2y-JN1"/>
+                                    <segue destination="sZt-MT-xYk" kind="show" id="5GG-cL-Cal"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-nC-GKF">
                                 <rect key="frame" x="191" y="365" width="46" height="30"/>
                                 <state key="normal" title="秘密"/>
                                 <connections>
-                                    <segue destination="sZt-MT-xYk" kind="show" id="pNS-bU-XMR"/>
+                                    <segue destination="AhZ-Db-vJN" kind="show" id="NSy-kt-2mA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwz-Z5-lU9">
@@ -607,36 +606,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="興趣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-FW-Inq">
-                                <rect key="frame" x="143" y="55" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="我的興趣是" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-m4-FGi">
-                                <rect key="frame" x="28" y="114" width="264" height="229"/>
-                                <color key="backgroundColor" red="0.94802695512771606" green="0.80066472291946411" blue="0.93653541803359985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="0.38096175591150921" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oq-CQ-Pv9">
-                                <rect key="frame" x="145" y="397" width="31" height="30"/>
+                                <rect key="frame" x="145" y="453" width="31" height="30"/>
                                 <state key="normal" title="完成"/>
                                 <connections>
                                     <action selector="hobbySubmit:" destination="ZGa-44-y4U" eventType="touchUpInside" id="yaX-C9-H86"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="我的興趣是" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-m4-FGi">
+                                <rect key="frame" x="28" y="28" width="264" height="315"/>
+                                <color key="backgroundColor" red="0.94802695512771606" green="0.80066472291946411" blue="0.93653541803359985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.38096175591150921" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P0k-m4-FGi" firstAttribute="top" secondItem="NPU-FW-Inq" secondAttribute="bottom" constant="38" id="7BA-2o-P3L"/>
-                            <constraint firstItem="NPU-FW-Inq" firstAttribute="top" secondItem="kRs-a5-hnl" secondAttribute="bottom" constant="35" id="9rf-bR-Ytz"/>
-                            <constraint firstItem="8oq-CQ-Pv9" firstAttribute="top" secondItem="P0k-m4-FGi" secondAttribute="bottom" constant="54" id="UIa-nH-ILt"/>
+                            <constraint firstItem="8oq-CQ-Pv9" firstAttribute="top" secondItem="P0k-m4-FGi" secondAttribute="bottom" constant="110" id="UIa-nH-ILt"/>
+                            <constraint firstItem="P0k-m4-FGi" firstAttribute="top" secondItem="kRs-a5-hnl" secondAttribute="bottom" constant="8" symbolic="YES" id="WgC-PL-nqi"/>
                             <constraint firstItem="8oq-CQ-Pv9" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="abj-pC-R8E"/>
-                            <constraint firstItem="zUe-i4-lb1" firstAttribute="top" secondItem="8oq-CQ-Pv9" secondAttribute="bottom" constant="141" id="b5v-Jg-m83"/>
+                            <constraint firstItem="zUe-i4-lb1" firstAttribute="top" secondItem="8oq-CQ-Pv9" secondAttribute="bottom" constant="85" id="b5v-Jg-m83"/>
                             <constraint firstItem="P0k-m4-FGi" firstAttribute="leading" secondItem="Orb-BY-AWu" secondAttribute="leadingMargin" constant="12" id="d1m-bl-Cyp"/>
-                            <constraint firstItem="NPU-FW-Inq" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="lAF-XR-vqR"/>
                             <constraint firstItem="P0k-m4-FGi" firstAttribute="centerX" secondItem="Orb-BY-AWu" secondAttribute="centerX" id="xUG-GG-4s9"/>
                         </constraints>
                     </view>
@@ -646,7 +637,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3h-Tq-bSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3019" y="-1138"/>
+            <point key="canvasLocation" x="3018.75" y="-1138.7323943661972"/>
         </scene>
         <!-- -->
         <scene sceneID="sN9-4N-rjq">
@@ -1391,10 +1382,10 @@
             </objects>
             <point key="canvasLocation" x="823" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Preference View Controller-->
         <scene sceneID="Seb-dR-7XK">
             <objects>
-                <viewController id="sZt-MT-xYk" sceneMemberID="viewController">
+                <viewController id="sZt-MT-xYk" customClass="preferenceViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hRw-IH-rWX"/>
                         <viewControllerLayoutGuide type="bottom" id="NXJ-Cc-Occ"/>
@@ -1403,41 +1394,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="偏好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guL-5U-r3i">
-                                <rect key="frame" x="143" y="55" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想認識什麼樣的對方?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdV-fA-RRC">
+                                <rect key="frame" x="78" y="46" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="746-Yl-wXu">
-                                <rect key="frame" x="151" y="397" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="完成"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="想認識什麼樣的對方?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdV-fA-RRC">
-                                <rect key="frame" x="84" y="113" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-Th-nv4">
-                                <rect key="frame" x="0.0" y="159" width="320" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-Th-nv4">
+                                <rect key="frame" x="0.0" y="107" width="320" height="216"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答案是..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Loc-kf-1ev">
+                                <rect key="frame" x="127" y="360.5" width="66" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="746-Yl-wXu">
+                                <rect key="frame" x="145" y="419" width="31" height="30"/>
+                                <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="preferenceFinish:" destination="sZt-MT-xYk" eventType="touchUpInside" id="bN3-01-hRT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aTP-Th-nv4" firstAttribute="centerX" secondItem="Gnl-6t-cQJ" secondAttribute="centerX" id="JuY-5X-DvX"/>
+                            <constraint firstItem="746-Yl-wXu" firstAttribute="top" secondItem="Loc-kf-1ev" secondAttribute="bottom" constant="38" id="Qeh-Nt-oDS"/>
+                            <constraint firstItem="Loc-kf-1ev" firstAttribute="centerX" secondItem="Gnl-6t-cQJ" secondAttribute="centerX" id="b8Y-tv-e6J"/>
+                            <constraint firstItem="mdV-fA-RRC" firstAttribute="top" secondItem="hRw-IH-rWX" secondAttribute="bottom" constant="26" id="ipd-Nh-Xde"/>
+                            <constraint firstItem="NXJ-Cc-Occ" firstAttribute="top" secondItem="746-Yl-wXu" secondAttribute="bottom" constant="119" id="n5y-ln-5Rx"/>
+                            <constraint firstItem="aTP-Th-nv4" firstAttribute="top" secondItem="mdV-fA-RRC" secondAttribute="bottom" constant="40" id="u4h-5c-YSD"/>
+                            <constraint firstItem="746-Yl-wXu" firstAttribute="centerX" secondItem="Gnl-6t-cQJ" secondAttribute="centerX" id="x2n-CB-JkM"/>
+                            <constraint firstItem="mdV-fA-RRC" firstAttribute="centerX" secondItem="Gnl-6t-cQJ" secondAttribute="centerX" id="yqI-Ir-P5F"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="preferenceLabel" destination="Loc-kf-1ev" id="dOf-gs-t1c"/>
+                        <outlet property="preferencePicker" destination="aTP-Th-nv4" id="m76-og-Rb9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9J8-Fq-Wk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3834.375" y="-1102.8169014084508"/>
         </scene>
-        <!--View Controller-->
+        <!--Club View Controller-->
         <scene sceneID="MqH-ZO-EJk">
             <objects>
-                <viewController id="DiO-36-pZo" sceneMemberID="viewController">
+                <viewController id="DiO-36-pZo" customClass="clubViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TtR-N4-qi7"/>
                         <viewControllerLayoutGuide type="bottom" id="fVn-La-ToX"/>
@@ -1446,37 +1450,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="社團" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTw-lU-VbD">
-                                <rect key="frame" x="143" y="55" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="我的社團有....." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KyL-0b-Wy6">
-                                <rect key="frame" x="28" y="114" width="259" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="我的社團有....." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KyL-0b-Wy6">
+                                <rect key="frame" x="28" y="37" width="264" height="375"/>
+                                <color key="backgroundColor" red="0.94802695512771606" green="0.80066472291946411" blue="0.93653541803359985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="QMn-kr-tLz"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcp-17-H9a">
-                                <rect key="frame" x="151" y="397" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcp-17-H9a">
+                                <rect key="frame" x="145" y="469" width="31" height="30"/>
                                 <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="clubFinish:" destination="DiO-36-pZo" eventType="touchUpInside" id="FQy-sc-ejv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jcp-17-H9a" firstAttribute="centerX" secondItem="N9G-r4-pCD" secondAttribute="centerX" id="AZV-5R-xfH"/>
+                            <constraint firstItem="KyL-0b-Wy6" firstAttribute="top" secondItem="N9G-r4-pCD" secondAttribute="top" constant="37" id="To2-je-5zA"/>
+                            <constraint firstItem="Jcp-17-H9a" firstAttribute="top" secondItem="KyL-0b-Wy6" secondAttribute="bottom" constant="57" id="sgL-6I-Ppq"/>
+                            <constraint firstItem="KyL-0b-Wy6" firstAttribute="leading" secondItem="N9G-r4-pCD" secondAttribute="leadingMargin" constant="12" id="tBb-L1-mif"/>
+                            <constraint firstItem="KyL-0b-Wy6" firstAttribute="centerX" secondItem="N9G-r4-pCD" secondAttribute="centerX" id="tFp-WL-cUZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clubTextview" destination="KyL-0b-Wy6" id="KL9-as-4s7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xia-QO-kys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2927" y="-392"/>
+            <point key="canvasLocation" x="3213.75" y="-145.77464788732394"/>
         </scene>
-        <!--View Controller-->
+        <!--Secret View Controller-->
         <scene sceneID="iEM-uY-LYs">
             <objects>
-                <viewController id="AhZ-Db-vJN" sceneMemberID="viewController">
+                <viewController id="AhZ-Db-vJN" customClass="secretViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ao5-cd-8PU"/>
                         <viewControllerLayoutGuide type="bottom" id="ovk-dT-ieG"/>
@@ -1485,32 +1497,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秘密" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-1q-N2T">
-                                <rect key="frame" x="143" y="55" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="我有什麼秘密能跟你分享" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xCa-dx-ajW">
-                                <rect key="frame" x="28" y="114" width="259" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-dZ-tSc">
+                                <rect key="frame" x="144" y="471" width="31" height="30"/>
+                                <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="secretFinish:" destination="AhZ-Db-vJN" eventType="touchUpInside" id="yoP-Fr-2KI"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="我有什麼秘密能跟你分享" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xCa-dx-ajW">
+                                <rect key="frame" x="29" y="28" width="262" height="360"/>
+                                <color key="backgroundColor" red="0.94802695512771606" green="0.80066472291946411" blue="0.93653541803359985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-dZ-tSc">
-                                <rect key="frame" x="151" y="397" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="完成"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xCa-dx-ajW" firstAttribute="top" secondItem="Ao5-cd-8PU" secondAttribute="bottom" constant="8" symbolic="YES" id="Bsv-9I-dMT"/>
+                            <constraint firstItem="lqG-dZ-tSc" firstAttribute="top" secondItem="xCa-dx-ajW" secondAttribute="bottom" constant="83" id="eXq-OZ-PxT"/>
+                            <constraint firstItem="xCa-dx-ajW" firstAttribute="centerX" secondItem="hSo-6t-rle" secondAttribute="centerX" id="gvW-pg-Ito"/>
+                            <constraint firstItem="ovk-dT-ieG" firstAttribute="top" secondItem="lqG-dZ-tSc" secondAttribute="bottom" constant="67" id="s9v-c9-bMZ"/>
+                            <constraint firstItem="xCa-dx-ajW" firstAttribute="leading" secondItem="hSo-6t-rle" secondAttribute="leadingMargin" constant="13" id="tBY-Ef-XBY"/>
+                            <constraint firstItem="lqG-dZ-tSc" firstAttribute="centerX" secondItem="hSo-6t-rle" secondAttribute="centerX" id="zQ3-XS-K1X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="secretTextview" destination="xCa-dx-ajW" id="9pm-zk-SCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JpR-HL-qg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3834" y="-425"/>
+            <point key="canvasLocation" x="3909.375" y="-273.59154929577466"/>
         </scene>
     </scenes>
     <resources>

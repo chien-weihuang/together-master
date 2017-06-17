@@ -1,5 +1,5 @@
 //
-//  hobbyViewController.swift
+//  clubViewController.swift
 //  QuickChat
 //
 //  Created by MAC on 2017/6/17.
@@ -9,23 +9,24 @@
 import UIKit
 import Firebase
 
-class hobbyViewController: UIViewController {
-    let id = Auth.auth().currentUser?.uid
+class secretViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserInfo()
-        self.title = "興趣"
+        self.title = "秘密"
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        @IBOutlet weak var hobbyText: UITextView!
-
-    @IBAction func hobbySubmit(_ sender: Any) {
-        let values = ["hobby": hobbyText.text]
+    
+    @IBOutlet weak var secretTextview: UITextView!
+    let id = Auth.auth().currentUser?.uid
+    @IBAction func secretFinish(_ sender: Any) {
+        let values = ["secret": secretTextview.text]
         Database.database().reference().child("users").child(id!).child("credentials").updateChildValues(values, withCompletionBlock: { (errr, _) in
             if errr == nil{
                 print("Change name success")
@@ -50,55 +51,40 @@ class hobbyViewController: UIViewController {
                     alertController,
                     animated: true,
                     completion: nil)
-
+                
                 
             }
         }
             
-    )}
-
-    //text view placeholder adjustment
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if hobbyText.textColor == UIColor.lightGray {
-            hobbyText.text = nil
-            hobbyText.textColor = UIColor.black
-        }
-    }
+        )}
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if hobbyText.text.isEmpty {
-            hobbyText.text = "Placeholder"
-            hobbyText.textColor = UIColor.lightGray
-        }
-    }
-
+    
     //Downloads current user credentials
     func fetchUserInfo() {
         
         Database.database().reference().child("users").child(id!).child("credentials").observeSingleEvent(of: .value, with: { (snapshot) in
             if let data = snapshot.value as? [String: String] {
-                if data["hobby"] == nil || data["hobby"] == ""{
-                    self.hobbyText.text = "Placeholder"
+                if data["secret"] == nil || data["secret"] == ""{
+                    self.secretTextview.text = "Placeholder"
                     print("nothing")
                 }
-                let hobby = data["hobby"]
+                let secret = data["secret"]
                 //print(hobby)
-                self.hobbyText.text = hobby!
-               
+                self.secretTextview.text = secret
+                
             }
         })
         
     }
-
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

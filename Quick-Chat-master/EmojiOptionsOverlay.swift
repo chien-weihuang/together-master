@@ -33,23 +33,29 @@ class EmojiOptionsOverlay: UIView {
         self.isUserInteractionEnabled = false
         self.layer.zPosition = CGFloat(FLT_MAX)
         
-        like1Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) - (emojiSize.height * 1.5) - emojiPadding, width: emojiSize.width, height: emojiSize.height)
+//        like1Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) - (emojiSize.height * 1.5) - emojiPadding, width: emojiSize.width, height: emojiSize.height)
+        
+        like1Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
         self.addSubview(like1Emoji)
         
-        like2Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
-        self.addSubview(like2Emoji)
+//        like2Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
+//        self.addSubview(like2Emoji)
+//        
+//        like3Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) + (emojiSize.height * 0.5) + emojiPadding, width: emojiSize.width, height: emojiSize.height)
+//        self.addSubview(like3Emoji)
         
-        like3Emoji.frame = CGRect(x: frame.width - emojiPadding - emojiSize.width, y: (frame.height/2) + (emojiSize.height * 0.5) + emojiPadding, width: emojiSize.width, height: emojiSize.height)
-        self.addSubview(like3Emoji)
+//        dislike1Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) - (emojiSize.height * 1.5) - emojiPadding, width: emojiSize.width, height: emojiSize.height)
+//        self.addSubview(dislike1Emoji)
         
-        dislike1Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) - (emojiSize.height * 1.5) - emojiPadding, width: emojiSize.width, height: emojiSize.height)
+        dislike1Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
         self.addSubview(dislike1Emoji)
         
-        dislike2Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
-        self.addSubview(dislike2Emoji)
         
-        dislike3Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) + (emojiSize.height * 0.5) + emojiPadding, width: emojiSize.width, height: emojiSize.height)
-        self.addSubview(dislike3Emoji)
+//        dislike2Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) - (emojiSize.height * 0.5), width: emojiSize.width, height: emojiSize.height)
+//        self.addSubview(dislike2Emoji)
+//        
+//        dislike3Emoji.frame = CGRect(x: emojiPadding, y: (frame.height/2) + (emojiSize.height * 0.5) + emojiPadding, width: emojiSize.width, height: emojiSize.height)
+//        self.addSubview(dislike3Emoji)
         
         heartEmoji.frame = CGRect(x: frame.width - emojiPadding - 50, y: 30, width: 35, height: 30)
         heartEmoji.layer.zPosition = CGFloat(FLT_MAX)

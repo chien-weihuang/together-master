@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickChat/ViewControllers/tinderViewController.swift"
+            timestampString = "519410042.836396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "tinderViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuickChat.tinderViewController.emojiOptionsOverlay.setter : Swift.ImplicitlyUnwrappedOptional&lt;QuickChat.EmojiOptionsOverlay&gt;"
+                  moduleName = "QuickChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/art/together-master/Quick-Chat-master/QuickChat/ViewControllers/tinderViewController.swift"
+                  timestampString = "519418885.453188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuickChat.tinderViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; QuickChat.tinderViewController"
+                  moduleName = "QuickChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/art/together-master/Quick-Chat-master/QuickChat/ViewControllers/tinderViewController.swift"
+                  timestampString = "519418885.456695"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuickChat.tinderViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;QuickChat.tinderViewController&gt;"
+                  moduleName = "QuickChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/art/together-master/Quick-Chat-master/QuickChat/ViewControllers/tinderViewController.swift"
+                  timestampString = "519418885.461205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

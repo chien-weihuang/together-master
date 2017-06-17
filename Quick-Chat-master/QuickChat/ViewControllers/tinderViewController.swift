@@ -18,19 +18,19 @@ class tinderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 28/255, green: 39/255, blue: 101/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 238/255, green: 169/255, blue: 184/255, alpha: 1.0)
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         setUpDummyUI()
         
         // 1. create a deck of cards
         // 20 cards for demonstrational purposes - once the cards run out, just re-run the project to start over
         // of course, you could always add new cards to self.cards and call layoutCards() again
-        for _ in 1...20 {
+        for _ in 1...5 {
             let card = imageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6))
             cards.append(card)
         }
         
-        // 2. layout the first 4 cards for the user
+        // 2. layout the first 5 cards for the user
         layoutCards()
         
         // 3. set up the (non-interactive) emoji options overlay
@@ -39,7 +39,7 @@ class tinderViewController: UIViewController {
     }
     
     /// Scale and alpha of successive cards visible to the user
-    let cardAttributes: [(downscale: CGFloat, alpha: CGFloat)] = [(1, 1), (0.92, 0.8), (0.84, 0.6), (0.76, 0.4)]
+    let cardAttributes: [(downscale: CGFloat, alpha: CGFloat)] = [(1, 1), (0.92, 0.8), (0.84, 0.6), (0.76, 0.4),(0.68, 0.2)]
     let cardInteritemSpacing: CGFloat = 15
     
     /// Set up the frames, alphas, and transforms of the first 4 cards on the screen
@@ -51,8 +51,8 @@ class tinderViewController: UIViewController {
         firstCard.center = self.view.center
         firstCard.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleCardPan)))
         
-        // the next 3 cards in the deck
-        for i in 1...3 {
+        // the next 4 cards in the deck
+        for i in 1...4 {
             if i > (cards.count - 1) { continue }
             
             let card = cards[i]
@@ -74,6 +74,10 @@ class tinderViewController: UIViewController {
                 card.frame.origin.y += 1.5
             }
             
+            if i == 4 {
+                card.frame.origin.y += 3.5
+            }
+            
             self.view.addSubview(card)
         }
         
@@ -86,7 +90,7 @@ class tinderViewController: UIViewController {
     func showNextCard() {
         let animationDuration: TimeInterval = 0.2
         // 1. animate each card to move forward one by one
-        for i in 1...3 {
+        for i in 1...4 {
             if i > (cards.count - 1) { continue }
             let card = cards[i]
             let newDownscale = cardAttributes[i - 1].downscale
@@ -109,30 +113,30 @@ class tinderViewController: UIViewController {
         }
         
         // 2. add a new card (now the 4th card in the deck) to the very back
-        if 4 > (cards.count - 1) {
+        if 5 > (cards.count - 1) {
             if cards.count != 1 {
                 self.view.bringSubview(toFront: cards[1])
             }
             return
         }
-        let newCard = cards[4]
-        newCard.layer.zPosition = CGFloat(cards.count - 4)
-        let downscale = cardAttributes[3].downscale
-        let alpha = cardAttributes[3].alpha
+        let newCard = cards[5]
+        newCard.layer.zPosition = CGFloat(cards.count - 5)
+        let downscale = cardAttributes[4].downscale
+        let alpha = cardAttributes[4].alpha
         
         // initial state of new card
         newCard.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         newCard.alpha = 0
         newCard.center.x = self.view.center.x
-        newCard.frame.origin.y = cards[1].frame.origin.y - (4 * cardInteritemSpacing)
+        newCard.frame.origin.y = cards[1].frame.origin.y - (5 * cardInteritemSpacing)
         self.view.addSubview(newCard)
         
         // animate to end state of new card
-        UIView.animate(withDuration: animationDuration, delay: (3 * (animationDuration / 2)), usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: animationDuration, delay: (4 * (animationDuration / 2)), usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
             newCard.transform = CGAffineTransform(scaleX: downscale, y: downscale)
             newCard.alpha = alpha
             newCard.center.x = self.view.center.x
-            newCard.frame.origin.y = self.cards[1].frame.origin.y - (3 * self.cardInteritemSpacing) + 1.5
+            newCard.frame.origin.y = self.cards[1].frame.origin.y - (4 * self.cardInteritemSpacing) + 1.5
         }, completion: nil)
         
         // first card needs to be in the front for proper interactivity
@@ -168,39 +172,48 @@ class tinderViewController: UIViewController {
         case .changed:
             cardAttachmentBehavior.anchorPoint = panLocationInView
             if cards[0].center.x > (self.view.center.x + requiredOffsetFromCenter) {
-                if cards[0].center.y < (self.view.center.y - optionLength) {
-                    cards[0].showOptionLabel(option: .like1)
-                    emojiOptionsOverlay.showEmoji(for: .like1)
-                    
-                    if cards[0].center.y < (self.view.center.y - optionLength - optionLength) {
-                        emojiOptionsOverlay.updateHeartEmoji(isFilled: true, isFocused: true)
-                    } else {
-                        emojiOptionsOverlay.updateHeartEmoji(isFilled: true, isFocused: false)
-                    }
-                    
-                } else if cards[0].center.y > (self.view.center.y + optionLength) {
-                    cards[0].showOptionLabel(option: .like3)
-                    emojiOptionsOverlay.showEmoji(for: .like3)
-                    emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
-                } else {
-                    cards[0].showOptionLabel(option: .like2)
-                    emojiOptionsOverlay.showEmoji(for: .like2)
-                    emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
-                }
+//                if cards[0].center.y < (self.view.center.y - optionLength) {
+//                    cards[0].showOptionLabel(option: .like1)
+//                    emojiOptionsOverlay.showEmoji(for: .like1)
+//                    
+//                    if cards[0].center.y < (self.view.center.y - optionLength - optionLength) {
+//                        emojiOptionsOverlay.updateHeartEmoji(isFilled: true, isFocused: true)
+//                    } else {
+//                        emojiOptionsOverlay.updateHeartEmoji(isFilled: true, isFocused: false)
+//                    }
+//                    
+//                } else if cards[0].center.y > (self.view.center.y + optionLength) {
+//                    cards[0].showOptionLabel(option: .like3)
+//                    emojiOptionsOverlay.showEmoji(for: .like3)
+//                    emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
+//                } else {
+//                    cards[0].showOptionLabel(option: .like2)
+//                    emojiOptionsOverlay.showEmoji(for: .like2)
+//                    emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
+//                }
+                cards[0].showOptionLabel(option: .like1)
+                emojiOptionsOverlay.showEmoji(for: .like1)
+                emojiOptionsOverlay.updateHeartEmoji(isFilled: true, isFocused: false)
+                
+                
             } else if cards[0].center.x < (self.view.center.x - requiredOffsetFromCenter) {
                 
-                emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
+//                emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
+//                
+//                if cards[0].center.y < (self.view.center.y - optionLength) {
+//                    cards[0].showOptionLabel(option: .dislike1)
+//                    emojiOptionsOverlay.showEmoji(for: .dislike1)
+//                } else if cards[0].center.y > (self.view.center.y + optionLength) {
+//                    cards[0].showOptionLabel(option: .dislike3)
+//                    emojiOptionsOverlay.showEmoji(for: .dislike3)
+//                } else {
+//                    cards[0].showOptionLabel(option: .dislike2)
+//                    emojiOptionsOverlay.showEmoji(for: .dislike2)
+//                }
                 
-                if cards[0].center.y < (self.view.center.y - optionLength) {
-                    cards[0].showOptionLabel(option: .dislike1)
-                    emojiOptionsOverlay.showEmoji(for: .dislike1)
-                } else if cards[0].center.y > (self.view.center.y + optionLength) {
-                    cards[0].showOptionLabel(option: .dislike3)
-                    emojiOptionsOverlay.showEmoji(for: .dislike3)
-                } else {
-                    cards[0].showOptionLabel(option: .dislike2)
-                    emojiOptionsOverlay.showEmoji(for: .dislike2)
-                }
+                emojiOptionsOverlay.updateHeartEmoji(isFilled: false, isFocused: false)
+                cards[0].showOptionLabel(option: .dislike1)
+                emojiOptionsOverlay.showEmoji(for: .dislike1)
             } else {
                 cards[0].hideOptionLabel()
                 emojiOptionsOverlay.hideFaceEmojis()
@@ -312,18 +325,18 @@ extension tinderViewController {
     /// Dummy UI
     func setUpDummyUI() {
         // menu icon
-        let menuIconImageView = UIImageView(image: UIImage(named: "menu_icon"))
-        menuIconImageView.contentMode = .scaleAspectFit
-        menuIconImageView.frame = CGRect(x: 35, y: 30, width: 35, height: 30)
-        menuIconImageView.isUserInteractionEnabled = false
-        self.view.addSubview(menuIconImageView)
+//        let menuIconImageView = UIImageView(image: UIImage(named: "menu_icon"))
+//        menuIconImageView.contentMode = .scaleAspectFit
+//        menuIconImageView.frame = CGRect(x: 35, y: 30, width: 35, height: 30)
+//        menuIconImageView.isUserInteractionEnabled = false
+//        self.view.addSubview(menuIconImageView)
         
         // title label
         let titleLabel = UILabel()
-        titleLabel.text = "How do you like\nthis one?"
+        titleLabel.text = "今日配對"
         titleLabel.numberOfLines = 2
         titleLabel.font = UIFont(name: "AvenirNext-Bold", size: 19)
-        titleLabel.textColor = UIColor(red: 83/255, green: 98/255, blue: 196/255, alpha: 1.0)
+        titleLabel.textColor = UIColor.white
         titleLabel.textAlignment = .center
         titleLabel.frame = CGRect(x: (self.view.frame.width / 2) - 90, y: 17, width: 180, height: 60)
         self.view.addSubview(titleLabel)

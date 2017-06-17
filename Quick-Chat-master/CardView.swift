@@ -10,11 +10,11 @@
 import UIKit
 
 public enum CardOption: String {
-    case like1 = "I love it!"
+    case like1 = "喜歡!"
     case like2 = "I do like it"
     case like3 = "It's fine"
     
-    case dislike1 = "Terrible!"
+    case dislike1 = "先不要!"
     case dislike2 = "I do not"
     case dislike3 = "Not enough"
 }
@@ -29,7 +29,7 @@ class CardView: UIView {
         
         // card style
         
-        self.backgroundColor = UIColor(red: 79/255, green: 96/255, blue: 201/255, alpha: 1.0)
+        self.backgroundColor = UIColor( red: 255/255, green: 192/255, blue: 203/255, alpha: 1.0)
         self.layer.cornerRadius = 10
         
         // labels on top left and right
@@ -43,6 +43,10 @@ class CardView: UIView {
         redLabel = CardViewLabel(origin: CGPoint(x: frame.width - CardViewLabel.size.width - padding, y: padding), color: UIColor(red: 236/255, green: 137/255, blue: 134/255, alpha: 1.0))
         redLabel.isHidden = true
         self.addSubview(redLabel)
+        
+    
+ 
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -127,7 +131,7 @@ class CardView: UIView {
 }
 
 class CardViewLabel: UILabel {
-    fileprivate static let size = CGSize(width: 120, height: 36)
+    fileprivate static let size = CGSize(width: 90, height: 36)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

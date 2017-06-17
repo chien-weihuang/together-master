@@ -315,6 +315,21 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         super.viewDidLoad()
         self.customization()
         self.fetchData()
+        // personal info (others)
+        let btn1 = UIButton(type: .custom)
+        btn1.setImage(UIImage(named: "profile"), for: .normal)
+        btn1.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        btn1.addTarget(self, action: #selector(toOtherProfile(sender:)), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: btn1)
+        self.navigationItem.setRightBarButtonItems([item1], animated: true)
+    }
+    
+    func toOtherProfile(sender: UIButton){
+        print("Button pressed")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "otherUserProfileViewController") as! otherUserProfileViewController
+        self.present(nextViewController, animated:true, completion:nil)
     }
 }
 

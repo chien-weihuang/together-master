@@ -65,7 +65,13 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.navigationItem.leftBarButtonItem = backButton
         self.locationManager.delegate = self
     }
-    
+    //pass to OtherView controller variables
+    var passName = ""
+    var passProfileImage = UIImage()
+    var passclubs = ""
+    var passhobby = ""
+    var passpreferrence = ""
+    var passSecret = ""
     //Downloads messages
     func fetchData() {
         Message.downloadAllMessages(forUserID: self.currentUser!.id, completion: {[weak weakSelf = self] (message) in
@@ -75,6 +81,31 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
                 if let state = weakSelf?.items.isEmpty, state == false {
                     weakSelf?.tableView.reloadData()
                     weakSelf?.tableView.scrollToRow(at: IndexPath.init(row: self.items.count - 1, section: 0), at: .bottom, animated: false)
+                    // get ToID info
+                    User.info(forUserID: self.currentUser!.id, completion: {[weak weakSelf = self] (user) in
+                        DispatchQueue.main.async {
+                            //get other user name and picture
+                            self.passName = user.name
+                            //print(self.passName)
+                            self.passProfileImage  = user.profilePic
+                            //print(self.passProfileImage)
+                            Database.database().reference().child("users").child(self.currentUser!.id).child("credentials").observeSingleEvent(of: .value, with: { (snapshot) in
+                                //get other info
+                                if let data = snapshot.value as? [String: String] {
+                                    // get other infos
+                                    self.passclubs = data["clubs"]!
+                                    //print(self.passclubs)
+                                    self.passhobby = data["hobby"]!
+                                    self.passpreferrence = data["preference"]!
+                                    self.passSecret = data["secret"]!
+                                }
+                            })
+                            
+                        }
+                    })
+                    
+                    
+
                 }
             }
         })
@@ -329,6 +360,14 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "otherUserProfileViewController") as! otherUserProfileViewController
+        nextViewController.detailname = self.passName
+        nextViewController.detailImage = self.passProfileImage
+        nextViewController.detailclub = self.passclubs
+        nextViewController.detailHobby = self.passhobby
+        nextViewController.detailPreference = self.passpreferrence
+        nextViewController.detailSecret = self.passSecret
+        
+        
         self.present(nextViewController, animated:true, completion:nil)
     }
 }

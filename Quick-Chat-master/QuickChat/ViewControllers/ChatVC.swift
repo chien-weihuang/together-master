@@ -368,7 +368,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         nextViewController.detailSecret = self.passSecret
         
         
-        self.present(nextViewController, animated:true, completion:nil)
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+        
     }
 }
 

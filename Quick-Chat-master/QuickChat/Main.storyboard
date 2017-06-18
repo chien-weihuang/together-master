@@ -1164,28 +1164,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qH3-PI-Icz">
-                                        <rect key="frame" x="126" y="883" width="36" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="huL-7Y-yy3"/>
-                                        </constraints>
-                                        <state key="normal" image="close"/>
-                                        <connections>
-                                            <action selector="quitButton:" destination="JSp-FY-AFW" eventType="touchUpInside" id="tDm-l3-QfH"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qH3-PI-Icz" firstAttribute="trailing" secondItem="Q3x-JG-EfL" secondAttribute="trailingMargin" constant="-150" id="1Gn-1e-1T3"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="leading" secondItem="Q3x-JG-EfL" secondAttribute="leading" constant="40" id="4Iq-2o-A3l"/>
                                     <constraint firstItem="aes-OX-Yl5" firstAttribute="top" secondItem="Q3x-JG-EfL" secondAttribute="top" constant="740" id="4aP-NI-HJ1"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="leading" secondItem="pVL-Gm-mGc" secondAttribute="leading" id="54l-wD-ZXs"/>
                                     <constraint firstItem="xC5-D8-iZw" firstAttribute="leading" secondItem="Q3x-JG-EfL" secondAttribute="leading" constant="53" id="7xf-ld-RM9"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="leading" secondItem="KGk-pe-WO7" secondAttribute="leading" id="8E4-N1-OcN"/>
-                                    <constraint firstItem="qH3-PI-Icz" firstAttribute="top" secondItem="xC5-D8-iZw" secondAttribute="top" constant="875" id="8Js-LR-w5A"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="centerX" secondItem="Q3x-JG-EfL" secondAttribute="centerX" id="94A-Om-BxQ"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="leading" secondItem="qE0-Ey-8uh" secondAttribute="leading" id="Df6-XL-MQw"/>
-                                    <constraint firstItem="qH3-PI-Icz" firstAttribute="leading" secondItem="xC5-D8-iZw" secondAttribute="trailing" constant="-142" id="Ie8-2y-c4Z"/>
                                     <constraint firstItem="xC5-D8-iZw" firstAttribute="top" secondItem="Q3x-JG-EfL" secondAttribute="topMargin" id="KDb-6P-ri7"/>
                                     <constraint firstItem="1Mh-3F-s4W" firstAttribute="top" secondItem="JHg-ci-Sr9" secondAttribute="bottom" constant="8" symbolic="YES" id="Lis-yk-CE8"/>
                                     <constraint firstItem="JHg-ci-Sr9" firstAttribute="leading" secondItem="aes-OX-Yl5" secondAttribute="leading" id="MiO-lb-QUi"/>
